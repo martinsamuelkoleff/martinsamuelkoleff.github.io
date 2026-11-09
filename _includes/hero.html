@@ -1,0 +1,21 @@
+<section class="hero">
+  <div class="hero-body">
+    <span class="hero-badge">Desarrollador de Software</span>
+    <h1 class="hero-title">Hola, soy Martín Samuel Koleff</h1>
+    <p class="hero-description">
+      Desarrollador de software independiente desde Santiago del Estero, Argentina.
+      Escribo sobre programación, proyectos personales, notas de desarrollo y tecnología.
+    </p>
+    <div class="hero-cta">
+      <a href="{{ '/proyectos/' | relative_url }}" class="btn btn-primary">Ver proyectos</a>
+      <a href="{{ '/about/' | relative_url }}" class="btn btn-outline">Sobre mí</a>
+    </div>
+  </div>
+  <div class="hero-image-container">
+    <img src="{{ '/assets/images/profile.jpg' | relative_url }}" 
+         alt="Martín Samuel Koleff" 
+         class="hero-image"
+         onerror="this.onerror=null; this.src='{{ '/assets/images/avatar-placeholder.svg' | relative_url }}';">
+  </div>
+</section>
+

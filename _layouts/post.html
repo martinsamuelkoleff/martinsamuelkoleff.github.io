@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<article class="page-layout post-layout">
+  <header class="page-header">
+    <div class="page-meta">
+      {%- assign date_format = site.minima.date_format | default: "%d %b, %Y" -%}
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: date_format }}</time>
+      {%- if page.categories.size > 0 -%}
+        <span class="meta-separator">•</span>
+        <span class="post-category">{{ page.categories.first }}</span>
+      {%- endif -%}
+    </div>
+    <h1 class="page-title">{{ page.title | escape }}</h1>
+  </header>
+
+  <div class="page-content">
+    {{ content }}
+  </div>
+
+  <footer class="post-footer">
+    <a href="{{ '/' | relative_url }}" class="back-link">
+      <span aria-hidden="true">←</span> Volver a publicaciones
+    </a>
+  </footer>
+</article>
+
