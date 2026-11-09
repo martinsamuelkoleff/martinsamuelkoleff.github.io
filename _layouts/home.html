@@ -8,42 +8,43 @@ layout: default
   {{ content }}
 
   {%- if site.posts.size > 0 -%}
-    <section class="posts-section">
-      <div class="section-header">
-        <h2 class="section-title">{{ page.list_title | default: "Publicaciones" }}</h2>
-        <span class="posts-count">{{ site.posts.size }} {% if site.posts.size == 1 %}publicación{% else %}publicaciones{% endif %}</span>
-      </div>
+  <section class="posts-section">
+    <div class="section-header">
+      <h2 class="section-title">{{ page.list_title | default: "Publicaciones" }}</h2>
+      <span class="posts-count">{{ site.posts.size }} {% if site.posts.size == 1 %}publicación{% else %}publicaciones{%
+        endif %}</span>
+    </div>
 
-      <div class="posts-grid">
-        {%- for post in site.posts -%}
-        <article class="post-card">
-          <div class="post-card-body">
-            <div class="post-card-meta">
-              {%- assign date_format = site.minima.date_format | default: "%d %b, %Y" -%}
-              <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: date_format }}</time>
-              {%- if post.categories.size > 0 -%}
-                <span class="meta-separator">•</span>
-                <span class="post-category">{{ post.categories.first }}</span>
-              {%- endif -%}
-            </div>
-            
-            <h3 class="post-card-title">
-              <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-            </h3>
-            
-            <p class="post-card-excerpt">
-              {{ post.excerpt | strip_html | truncatewords: 20 }}
-            </p>
+    <div class="posts-grid">
+      {%- for post in site.posts -%}
+      <article class="post-card">
+        <div class="post-card-body">
+          <div class="post-card-meta">
+            {%- assign date_format = site.minima.date_format | default: "%d %b, %Y" -%}
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: date_format }}</time>
+            {%- if post.categories.size > 0 -%}
+            <span class="meta-separator">•</span>
+            <span class="post-category">{{ post.categories.first }}</span>
+            {%- endif -%}
           </div>
 
-          <div class="post-card-footer">
-            <a href="{{ post.url | relative_url }}" class="read-more">
-              Leer artículo <span class="arrow" aria-hidden="true">→</span>
-            </a>
-          </div>
-        </article>
-        {%- endfor -%}
-      </div>
-    </section>
+          <h3 class="post-card-title">
+            <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+          </h3>
+
+          <p class="post-card-excerpt">
+            {{ post.excerpt | strip_html | truncatewords: 20 }}
+          </p>
+        </div>
+
+        <div class="post-card-footer">
+          <a href="{{ post.url | relative_url }}" class="read-more">
+            Leer artículo
+          </a>
+        </div>
+      </article>
+      {%- endfor -%}
+    </div>
+  </section>
   {%- endif -%}
 </div>
