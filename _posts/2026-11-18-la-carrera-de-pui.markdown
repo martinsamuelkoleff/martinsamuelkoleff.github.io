@@ -2,7 +2,7 @@
 layout: post
 title:  "La carrera de Programador Universitario en Informática"
 date:   2026-11-18 01:00:00 +0000
-categories: [estudio]
+categories: [universidad]
 ---
 
 La carrera de Programador Universitario en Informática (PUI) se dicta en la Universidad Nacional de Santiago del Estero. Es una tecnicatura de tres años y, aclaro, yo la cursé con el plan de estudio 2017.
